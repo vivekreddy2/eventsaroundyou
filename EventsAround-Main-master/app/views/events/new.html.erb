@@ -1,0 +1,199 @@
+
+<div class="events_new">
+
+<div class="container">
+
+  <div class="row body">
+    
+      <ul>
+      	    <h1><span class = "label label-normal">CREATE EVENT</span></h1>
+      	    <br>
+      	    <br>
+      	    
+      	<%= form_tag(user_events_path, method: :post) do %>
+
+        <p>
+        	<li>
+           		<%= label_tag :lname, 'Event Name', class: 'left' %>
+		   		<%= text_field_tag :name, params[:name], class: 'left', class: 'form-control'%>
+      		 </li>
+        </p>
+
+         <p>
+         	<li>
+   				<%= label_tag :lvenue, 'Venue', class: 'left' %>
+				<%= text_field_tag :venue, params[:venue], class: 'left', class: 'form-control' %> 
+          </li>
+        </p>
+
+        <p>	
+        <li>
+          
+          <%= label_tag :lftype, 'Fest Type', class: 'left' %>
+			<%= text_field_tag :festtype, params[:festtype], class: 'left', class: 'form-control' %> 
+        </li>   
+        </p>     
+
+        <p>
+        <li>
+           <%= label_tag :linfo, 'Information' %>
+		   <%= text_area_tag :information, params[:information], size: '46x4', class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+           <%= label_tag :fweb, 'fest website' %>
+		   <%= text_field_tag :festwebsite, params[:festwebsite], class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+          <%= label_tag :fb, 'fb link' %>
+		  <%= text_field_tag :fblink, params[:fblink], class: 'form-control' %>
+        </li>
+        </p>
+
+
+
+        <p>
+        <li>
+		  <%= label_tag :sdate, 'start date' %>
+		  <%= date_select('range1', 'startdate', :order => [:month, :day, :year])%>
+        </li>
+        </p>
+
+
+        <p>
+        <li>
+          <%= label_tag :edate, 'end date' %>
+		  <%= date_select('range2', 'enddate', :order => [:month, :day, :year])%>
+        </li>
+        </p>
+
+        <p>
+        <li>
+			<%= label_tag :e1, 'Email Id' %>
+			<%= text_field_tag :email1, params[:email1], class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+    		<%= label_tag :e2, 'Secondary Email Id' %>
+			<%= text_field_tag :email2, params[:email2], class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+        	<%= label_tag :p1, 'Phone 1' %>
+			<%= text_field_tag :phone1, params[:phone1], class: 'form-control' %>
+        </li>
+        </p>
+        	
+        <p>
+        <li>
+        	<%= label_tag :p2, 'Phone 2' %>
+			<%= text_field_tag :phone2, params[:phone2], class: 'form-control' %>
+        </li>
+        </p>
+
+        <p>
+        <li>
+        	<%= label_tag :lfee, 'Fee' %>
+			<%= text_field_tag :fee, params[:fee], class: 'form-control' %>
+        </li>
+        </p>
+
+        
+
+        <li>
+          <%= submit_tag 'Submit', class: 'btn btn-submit' %>
+          
+        </li>
+        <%end%>
+      </ul>
+    
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+<h1>events new</h1>
+<%= form_tag(user_events_path, method: :post) do %>
+<fieldset>
+	<legend>Please Enter below information</legend>
+	<div class="container">
+		<%= label_tag :lname, 'Event Name' %>
+		<%= text_field_tag :name, params[:name] %>
+		
+		<%= label_tag :lvenue, 'Venue' %>
+		<%= text_field_tag :venue, params[:venue] %>
+
+		<%= label_tag :linfo, 'Information' %>
+		<%= text_area_tag :information, params[:information] %>
+
+		<%= label_tag :fweb, 'fest website' %>
+		<%= text_field_tag :festwebsite, params[:festwebsite] %>
+
+		<%= label_tag :fb, 'fb link' %>
+		<%= text_field_tag :fblink, params[:fblink] %>
+
+		<%= label_tag :sdate, 'start date' %>
+		<%= date_select('range1', 'startdate', :order => [:month, :day, :year])%>
+
+
+		
+
+		<%= label_tag :e1, 'Email Id' %>
+		<%= text_field_tag :email1, params[:email1] %>
+
+		<%= label_tag :e2, 'Secondary Email Id' %>
+		<%= text_field_tag :email2, params[:email2] %>
+
+		<%= label_tag :p1, 'Phone 1' %>
+		<%= text_field_tag :phone1, params[:phone1] %>
+
+
+		<%= label_tag :p2, 'Phone 2' %>
+		<%= text_field_tag :phone2, params[:phone2] %>
+
+
+		<%= label_tag :lfee, 'Fee' %>
+		<%= text_field_tag :fee, params[:fee] %>
+
+		
+	</div>
+	<div>
+		<%= submit_tag 'Submit', class: 'btn btn-submit' %>
+	</div>
+</fieldset>
+
+		
+
+
+<%end%>
+
+-->
