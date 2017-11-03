@@ -37,7 +37,7 @@
         <div class="buttonedit" style="padding-top: 20px;">
                    <%= link_to "<button class='btn btn-lg btn-primary wow fadeInUp' data-wow-delay='1s'><i class='fa fa-key' aria-hidden='true' ></i>Change Password</button>".html_safe, edit_user_path(session[:user_id]), :id => "", :class => "button" %>
                 
-        <%= link_to "<button class='btn btn-lg btn-primary wow fadeInUp' data-wow-delay='1s'><i class='fa fa-key' aria-hidden='true' ></i>View Events</button>".html_safe, edit_user_path(session[:user_id]), :id => "", :class => "button" %>
+        <%= link_to "<button class='btn btn-lg btn-primary wow fadeInUp' data-wow-delay='1s'><i class='fa fa-key' aria-hidden='true' ></i>View Events</button>".html_safe, user_events_path(session[:user_id]), :id => "", :class => "button" %>
         </div>
     </div>
         <% puts "Yeah yeah it is coming" %>
