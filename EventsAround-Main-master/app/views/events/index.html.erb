@@ -1,3 +1,4 @@
+<body>
 <div id="pricing" class="pricing">
     <div class="container">
       <div class="row">
@@ -52,13 +53,12 @@
   </div>
 
 
-<h1>events Index</h1>
-<tbody>
-    <% @events.each do |event| %>
-      
-        <h2><%= event.name %></h2>
-       
-        <td></td>
-       
-    <% end %>
-  </tbody>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/wow.min.js"></script>
+    <script>
+    new WOW().init();
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
