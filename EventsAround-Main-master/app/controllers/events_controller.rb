@@ -19,13 +19,6 @@ class EventsController < ApplicationController
 
   def update
     @event = Event.find(params[:id])
-    @start_date = Date.civil(params[:range1][:"startdate(1i)"].to_i, params[:range1][:"startdate(2i)"].to_i, params[:range1][:"startdate(3i)"].to_i)
-    @end_date = Date.civil(params[:range2][:"enddate(1i)"].to_i, params[:range2][:"enddate(2i)"].to_i, params[:range2][:"enddate(3i)"].to_i)
-    print "coming coming coming coming coming coming coming "
-    print "#{@start_date}"
-    print "#{@end_date}"
-    event_params[:startdate] = @start_date
-    event_params[:enddate] = @end_date
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to  user_events_path, notice: 'Event was successfully edited.' }

@@ -68,8 +68,8 @@
 
         <p>
         <li>
-		  <%= label_tag :sdate, 'start date' %>
-		  <%= date_select('range1', 'startdate', :order => [:month, :day, :year])%>
+		       <%= label_tag :sdate, 'start date' %>
+         <%= text_field_tag :startdate, @event.startdate, class: 'form-control', type: 'date' %>
         </li>
         </p>
 
@@ -77,7 +77,7 @@
         <p>
         <li>
           <%= label_tag :edate, 'end date' %>
-		  <%= date_select('range2', 'enddate', :order => [:month, :day, :year])%>
+         <%= text_field_tag :enddate, @event.enddate, class: 'form-control', type: 'date' %>
         </li>
         </p>
 
