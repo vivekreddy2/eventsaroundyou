@@ -35,11 +35,7 @@ class EventsController < ApplicationController
   		puts "coming"
       @event=Event.new(event_params)
       @event.user_id = session[:user_id]
-      @start_date = Date.civil(params[:range1][:"startdate(1i)"].to_i, params[:range1][:"startdate(2i)"].to_i, params[:range1][:"startdate(3i)"].to_i)
-      @end_date = Date.civil(params[:range2][:"enddate(1i)"].to_i, params[:range2][:"enddate(2i)"].to_i, params[:range2][:"enddate(3i)"].to_i)
-    
-      @event.startdate=@start_date
-      @event.enddate=@end_date
+     
   		if Event.exists?(name: @event.name)
       		redirect_to new_user_event_path , alert: "Event already Exists"
       		return

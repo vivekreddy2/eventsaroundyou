@@ -4,7 +4,7 @@ class PrintEventsController < ApplicationController
 		@totalevents = Event.all
 		@hostevent=login_url
 		if session[:user_id]!=nil
-			@hostevent=new_user_event_path(session[:user_id])
+			@hostevent = user_events_path(session[:user_id])
 		end
 	
 		#@user = User.new()

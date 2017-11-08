@@ -41,6 +41,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @user = User.find(session[:user_id])
   end
 
   # POST /users
@@ -82,10 +83,21 @@ class UsersController < ApplicationController
 
   "This is used to update the username and password"
   def update
+    @curr = User.find(session[:user_id])
+    @user_hash = BCrypt::Password.new(@curr.password_digest)
+    if @user_hash != params[:oldpassword] 
+        render :edit, alert: 'Old Password is Wrong'
+        return
+    end 
+
+    if params[:newpassword] != params[:newpassword_conformation]
+        render :edit, alert: 'New Passwords Doesnt Match'
+    end
+    
     respond_to do |format|
-      if @user.update(user_params)
-        UserMailer.update_email(@user, @user.password).deliver_now
-        format.html { redirect_to login_path, notice: 'User was successfully updated.' }
+      if @curr.update_attribute(:password, "#{params[:newpassword]}")
+        "UserMailer.update_email(@curr, @curr.password).deliver_now"
+        format.html { redirect_to login_path, alert: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

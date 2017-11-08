@@ -1005,9 +1005,8 @@ background-color: transparent !important;
 /* new users controller new starts here */
 
 .newuserscontrollernew img {
-	height: 700px;
-	width: 450px;
-
+	height: 200px;
+	width: 200px;
 }
 
 .newuserscontrollernew {
