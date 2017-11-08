@@ -9,6 +9,11 @@
         </div>
         <% i = 1 %>
         <% k = 0.8 %>
+        <a href="<%= @hostevent %>">
+            <button class="btn btn-lg btn-primary host"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;&nbsp;View Your Events</button>
+
+            <div class="col col-lg-12 col-md-12 wow flipInY" data-wow-delay="0.8s">
+                </div>
         <% @totalevents.each do |event| %>
             <% p = (k + ((i-1) * 0.4)).to_s + "s" %>
             <div class="col col-lg-4 col-md-4 wow flipInY" data-wow-delay="<%= p %>">
